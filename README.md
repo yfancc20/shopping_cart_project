@@ -9,3 +9,6 @@
 <h3>MySQL function?</h3>
 <p>The function used for MySQL is the basic one: $mysqli->query.</p>
 <p>No preprare statement, no POD in this system.</p>
+<br>
+<br>
+<p>The connect_db.php file is removed due to privacy.</p>
