@@ -14,7 +14,7 @@
     // 當 condition 非 false 的話（有可能是 true，或是有結果的 object）
 
     // 宣告三行陣列
-    $idList = array();
+    $pIdList = array();
     $nameList = array();
     $priceList = array();
 
@@ -32,18 +32,18 @@
         // 如果沒有 MYSQLI_ASSOC，就必須用 $row[0], $row[1]的方式取資料
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             // array_push, 把後者放進前者的陣列裡
-            array_push($idList, $row['p_id']);
+            array_push($pIdList, $row['p_id']);
             array_push($nameList, $row['p_name']);
             array_push($priceList, $row['p_price']);
         }
     }
     
-    for ($i=0; $i < $count; $i++) { 
-        echo "商品id:" . $idList[$i];
-        echo "商品名稱:" . $nameList[$i];
-        echo "商品價格：" . $priceList[$i];
-        echo "<br>";
-    }
+    // for ($i=0; $i < $count; $i++) { 
+    //     echo "商品id:" . $pIdList[$i];
+    //     echo "商品名稱:" . $nameList[$i];
+    //     echo "商品價格：" . $priceList[$i];
+    //     echo "<br>";
+    // }
 
     // 我做完該做的事了，我就關掉資料庫。
     $DB->close();
@@ -60,6 +60,7 @@
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
+        <? include 'menu.html' ?>
         <center>
             <h1>這是一個假商品列表，有 <?=$count?> 項商品</h1>
             <table class="listTable">
@@ -70,10 +71,10 @@
                 </tr>
                 <?
                     for ($i=0; $i < $count; $i++) { 
-                        // 把 id 取出來 
-                        $id = $idList[$i];
+                        // 把 p_id 取出來 
+                        $pId = $pIdList[$i];
                         echo "<tr>";
-                        echo "<td><a href=\"product.php?id=$id\">" . $idList[$i] . "</a></td>";
+                        echo "<td><a href=\"product.php?id=$pId\">" . $pIdList[$i] . "</a></td>";
                         echo "<td>" . $nameList[$i] . "</td>";
                         echo "<td>" . $priceList[$i] . "</td>";
                         echo "</tr>";

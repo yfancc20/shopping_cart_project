@@ -5,6 +5,17 @@
  * @date    2017-05-08 20:02:41
  * teaching for Cindy
  */
+a{
+    text-decoration: none;
+}
+.menu{
+    text-align: center;
+    line-height: 100px;
+}
+.menu span{
+    margin: 10px 20px;
+    font-size: 20px;
+}
 
 .listTable th, .listTable td{
     width: 100px;
