@@ -1,6 +1,6 @@
 This is a simple shopping website system.
 
-Why?
+<p>Why?</p>
 I build this for demonstracting the use of basic PHP, HTML and MySQL to my friend.
 
 Framework?
