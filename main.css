@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Yi-Fan Wu
+ * @date    2017-05-08 20:02:41
+ * teaching for Cindy
+ */
+
+.listTable th, .listTable td{
+    width: 100px;
+    text-align: center;
+}
+
+.putCart{
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: #EE7700;
+    border-radius: 15px;
+}
