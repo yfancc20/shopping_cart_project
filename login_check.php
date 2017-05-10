@@ -17,7 +17,7 @@
         $userId = $row[0];
         $_SESSION['u_id'] = $userId;
         $message = "登入成功！";
-        $url = "main.php";
+        $url = "product_list.php";
     } else {
         $message = "帳號或密碼錯誤。";
         $url = "login.php";
