@@ -29,7 +29,7 @@
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.html' ?>
+        <? include 'menu.php' ?>
         <center>
             <form method="POST" action="cart_put.php">
                 <h1><?=$p_name?></h1>

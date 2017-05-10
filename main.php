@@ -1,5 +1,5 @@
 <?php
-
+    include_once 'session_login.php';
     include_once 'connect_db.php';
 
     $DB = getDBObject();    // 拿到可以操作Database的東西了：$DB
@@ -60,7 +60,7 @@
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.html' ?>
+        <? include 'menu.php' ?>
         <center>
             <h1>這是一個假商品列表，有 <?=$count?> 項商品</h1>
             <table class="listTable">

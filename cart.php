@@ -48,7 +48,7 @@
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.html' ?>
+        <? include 'menu.php' ?>
         <center>
             <h1>您的購物車</h1>
             <table class="listTable">
