@@ -9,5 +9,5 @@
 
 <script type="text/javascript">
     alert("登出成功！");
-    document.location.href = "main.php";
+    document.location.href = "product_list.php";
 </script>

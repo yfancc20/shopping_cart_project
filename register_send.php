@@ -26,7 +26,7 @@
     if ($result = $DB->query($sql)) {
         $_SESSION['u_id'] = $userId;
         $message = "註冊成功！";
-        $redirect = "<script>document.location.href=\"main.php\"</script>";
+        $redirect = "<script>document.location.href=\"product_list.php\"</script>";
     } else {
         $message = "註冊失敗，請重試！";
         $redirect = "<script>history.go(-1)</script>";
