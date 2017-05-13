@@ -1,5 +1,7 @@
 <?
     include_once 'session_login.php';
+    redirect($login);
+
     include_once 'f_data/get_user_product.php';
 
     $userId = $_SESSION['u_id'];
@@ -37,6 +39,12 @@
                             <td><a href="product.php?id=<?=$pId?>"><?=$pList[$i]['p_id']?></a></td>
                             <td><?=$pList[$i]['p_name']?></td>
                             <td><?=$pList[$i]['p_price']?></td>
+                            <td>
+                                <form method="post" action="product_delete.php">
+                                    <input type="hidden" name="p_id" value="<?=$pId?>">
+                                    <button type="submit" value="submit">X</button>
+                                </form>
+                            </td>
                         </tr>
                 <?
                     }     

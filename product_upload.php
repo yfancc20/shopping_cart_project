@@ -29,8 +29,8 @@
                         <td><input type="text" name="p_price" placeholder="請輸入單價"></td>
                     </tr>
                     <tr>
-                        <th>商品數量</th>
-                        <td><input type="password" name="p_num"></td>
+                        <th>商品庫存</th>
+                        <td><input type="text" name="p_stock"></td>
                     </tr>
                 </table>
                 <input type="hidden" name="u_id" value="<?=$userId?>">

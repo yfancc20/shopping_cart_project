@@ -1,6 +1,5 @@
 <?php
     include_once 'session_login.php';
-
 ?>
 <!DOCTYPE html>
 <html>

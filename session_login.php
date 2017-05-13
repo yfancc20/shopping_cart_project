@@ -8,7 +8,8 @@
 
     function redirect ($login){
         if ($login == false) {
-            header('Location: product_list.php');
+            $_SESSION['from_url'] = $_SERVER['PHP_SELF'];
+            header('Location: login.php');
         }
     }
 ?>
