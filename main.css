@@ -2,9 +2,14 @@
 /**
  * 
  * @authors Yi-Fan Wu
- * @date    2017-05-08 20:02:41
- * teaching for Cindy
+ * @create date    2017-05-08 20:02:41
+ * Demostraction for my friends
  */
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
 a{
     text-decoration: none;
     color: #0066FF;
@@ -12,9 +17,27 @@ a{
 a:hover{
     color: #99BBFF;
 }
+
+/* Header Menu */
 .menu{
-    text-align: center;
     line-height: 100px;
+    background-color: #DDFF77;
+}
+.menu-title, .menu-general, .menu-user{
+    display: inline-block;
+}
+.menu-title{
+    width: 400px;
+}
+.menu-user{
+    margin-right: 10px;
+    float: right;
+}
+.menu a{
+    color: #227700;
+}
+.menu a:hover{
+    color: #00AA00;
 }
 .menu span{
     margin: 10px 20px;
