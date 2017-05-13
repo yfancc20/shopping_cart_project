@@ -20,10 +20,10 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
+        <div class="wrapper">
             <h1>註冊新會員</h1>
             <form method="post" action="register_send.php">
-                <table class="formTable">
+                <table class="form-table">
                     <tr>
                         <th><span> * </span>帳號</th>
                         <td><input type="text" name="u_account" value="<?=$preAccount?>"></td>
@@ -51,6 +51,6 @@
                 </table>
                 <button type="submit">確認送出</button>
             </form>
-        </center>
+        </div>
     </body>
 </html>

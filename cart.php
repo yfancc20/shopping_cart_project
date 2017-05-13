@@ -49,9 +49,9 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
+        <div class="wrapper">
             <h1>您的購物車</h1>
-            <table class="listTable">
+            <table class="list-table">
                 <th>商品編號</th>
                 <th>商品名稱</th>
                 <th>商品數量</th>
@@ -84,6 +84,6 @@
                 <td>總和：</td>
                 <td><?=$totalPrice?></td>
             </table>
-        </center>
+        </div>
     </body>
 </html>

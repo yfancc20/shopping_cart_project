@@ -16,10 +16,10 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
+        <div class="wrapper">
             <h1>上傳新商品</h1>
             <form method="post" action="product_upload_send.php">
-                <table class="formTable">
+                <table class="form-table">
                     <tr>
                         <th>商品名稱</th>
                         <td><input type="text" name="p_name"></td>
@@ -36,6 +36,6 @@
                 <input type="hidden" name="u_id" value="<?=$userId?>">
                 <button type="submit">上傳</button>
             </form>
-        </center>
+        </div>
     </body>
 </html>

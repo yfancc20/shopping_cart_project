@@ -21,10 +21,10 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
+        <div class="wrapper">
             <button onclick="location.href='product_upload.php'">上傳新商品</button>
             <h1>您有 <?=$count?> 項商品</h1>
-            <table class="listTable">
+            <table class="list-table">
                 <tr>
                     <th>商品編號</th>
                     <th>商品名稱</th>
@@ -50,6 +50,6 @@
                     }     
                 ?>
             </table>
-        </center>
+        </div>
     </body>
 </html>

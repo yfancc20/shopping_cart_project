@@ -61,26 +61,32 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
-            <h1>這是一個假商品列表，有 <?=$count?> 項商品</h1>
-            <table class="listTable">
-                <tr>
-                    <th>商品編號</th>
-                    <th>商品名稱</th>
-                    <th>商品價格</th>
-                </tr>
-                <?
-                    for ($i=0; $i < $count; $i++) { 
-                        // 把 p_id 取出來 
-                        $pId = $pIdList[$i];
-                        echo "<tr>";
-                        echo "<td><a href=\"product.php?id=$pId\">" . $pIdList[$i] . "</a></td>";
-                        echo "<td>" . $nameList[$i] . "</td>";
-                        echo "<td>" . $priceList[$i] . "</td>";
-                        echo "</tr>";
-                    }
-                ?>
-            </table>
-        </center>
+        <div class="wrapper">
+            <div class="main">
+                <div class="list-header">
+                    <h1>有 <?=$count?> 項商品</h1>
+                </div>
+                <table class="list-table">
+                    <?
+                        for ($i=0; $i < $count; $i++) { 
+                            // 把 p_id 取出來 
+                            $pId = $pIdList[$i];
+                            $pName = $nameList[$i];
+                            $pPrice = $priceList[$i];
+                    ?>
+                            <tr>
+                                <td rowspan="2" class="list-img"><img src=""></td>
+                                <td class="list-name"><a href="product.php?id=<?=$pId?>"><?=$pName?></a></td>
+                            </tr>
+                            <tr>
+                                <td class="list-price"><?=$priceList[$i]?></td>
+                            </tr>
+                            <tr><td colspan="2"></td></tr>
+                    <?
+                        }
+                    ?>
+                </table>
+            </div>
+        </div>
     </body>
 </html>

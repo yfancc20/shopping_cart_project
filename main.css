@@ -44,21 +44,53 @@ a:hover{
     font-size: 20px;
 }
 
-.listTable th, .listTable td{
-    width: 100px;
-    text-align: center;
+/* Main General */
+.wrapper{
+    margin: 20px auto;  
+}
+.main{
+    margin: 0 auto;
+    width: 800px;
 }
 
-.formTable{
+
+.list-header > h1{
+    
+}
+.list-img, .list-img > img{
+    width: 100px;
+    height: 100px;
+}
+.list-img > img{
+    background-color: #444444;
+}
+.list-name, .list-price{
+    height: 50px;
+    width: 100%;
+    padding: 0px 20px;
+}
+.list-name{
+    vertical-align: bottom;
+}
+.list-price{
+    vertical-align: top;
+}
+.list-line{
+    height: 3px;
+    background-color: #444444;
+    border: 1px solid #444;
+}
+
+.form-table{
     margin-bottom: 20px;
 }
-.formTable th{
+.form-table th{
     text-align: right;
 }
-.formTable th > span{
+.form-table th > span{
     color: red;
 }
-.formTable td{
+.form-table td{
     padding: 0px 20px;
 }
 

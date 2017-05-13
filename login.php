@@ -13,10 +13,10 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
+        <div class="wrapper">
             <h1>會員登入</h1>
             <form method="post" action="login_check.php">
-                <table class="formTable">
+                <table class="form-table">
                     <tr>
                         <th>帳號</th>
                         <td><input type="text" name="u_account"></td>
@@ -28,6 +28,6 @@
                 </table>
                 <button type="submit">登入</button>
             </form>
-        </center>
+        </div>
     </body>
 </html>

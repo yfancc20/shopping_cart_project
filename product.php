@@ -30,19 +30,21 @@
     </head>
     <body>
         <? include 'menu.php' ?>
-        <center>
-            <form method="POST" action="cart_put.php">
-                <h1><?=$p_name?></h1>
-                <p><?=$p_id?></p>
-                <input type="hidden" name="p_id" value="<?=$p_id?>">
-                <select name="p_num">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>                
-                <button class="putCart" type="submit" value="submit"> 放入購物車 </button>
-            </form>
-        </center>
+        <div class="wrapper">
+            <div class="main">
+                <form method="POST" action="cart_put.php">
+                    <h1><?=$p_name?></h1>
+                    <p><?=$p_id?></p>
+                    <input type="hidden" name="p_id" value="<?=$p_id?>">
+                    <select name="p_num">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>                
+                    <button class="putCart" type="submit" value="submit"> 放入購物車 </button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
