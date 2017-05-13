@@ -1,6 +1,11 @@
 <?
     include_once 'session_login.php';
+    include_once 'f_data/get_user_product.php';
 
+    $userId = $_SESSION['u_id'];
+
+    $pList = getUserProduct($userId);
+    $count = count($pList);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +20,8 @@
     <body>
         <? include 'menu.php' ?>
         <center>
-            <h1>這是一個假商品列表，有 <?=$count?> 項商品</h1>
+            <button onclick="location.href='product_upload.php'">上傳新商品</button>
+            <h1>您有 <?=$count?> 項商品</h1>
             <table class="listTable">
                 <tr>
                     <th>商品編號</th>
@@ -25,13 +31,15 @@
                 <?
                     for ($i=0; $i < $count; $i++) { 
                         // 把 p_id 取出來 
-                        $pId = $pIdList[$i];
-                        echo "<tr>";
-                        echo "<td><a href=\"product.php?id=$pId\">" . $pIdList[$i] . "</a></td>";
-                        echo "<td>" . $nameList[$i] . "</td>";
-                        echo "<td>" . $priceList[$i] . "</td>";
-                        echo "</tr>";
-                    }
+                        $pId = $pList[$i]['p_id'];
+                ?>
+                        <tr>
+                            <td><a href="product.php?id=<?=$pId?>"><?=$pList[$i]['p_id']?></a></td>
+                            <td><?=$pList[$i]['p_name']?></td>
+                            <td><?=$pList[$i]['p_price']?></td>
+                        </tr>
+                <?
+                    }     
                 ?>
             </table>
         </center>
