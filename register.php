@@ -1,5 +1,5 @@
 <?php
-    include_once 'session_login.php';
+    include_once 'f_other/session_login.php';
 
     // help filling the form when refreshing
     $preAccount = isset($_POST['u_account']) ? $_POST['u_account'] : "";
@@ -16,14 +16,14 @@
         <title>Register</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
                 <h1>註冊新會員</h1>
-                <form method="post" action="register_send.php">
+                <form method="post" action="f_page/register_send.php">
                     <table class="form-table">
                         <tr>
                             <th><span> * </span>帳號</th>

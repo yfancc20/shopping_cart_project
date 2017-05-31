@@ -1,6 +1,6 @@
 <?php
     // include db file
-    include_once 'connect_db.php';
+    include_once __DIR__.'/../f_other/connect_db.php';
     $DB = getDBObject();
 
     // 雖然現在沒有使用者，如果有使用者的話，記得要有userId
@@ -13,11 +13,21 @@
     $sql = "INSERT INTO shopping_cart(`p_id`, `p_num`) VALUES($pId, $pNum)";
     if ($result = $DB->query($sql)) {
         $DB->close();
-        echo "<script>document.location.href=\"cart.php\"</script>";
+        $url = "../cart.php";
+        $put = true;
     } else {
         $DB->close();
-        echo '<script>alert("放入失敗！！")</script>';
-        echo "<script>document.location.href=\"product.php?id=$pId\"</script>";
+        $put = false;
+        $url = "../product.php?id=$pId";
     }
 
+    header("refresh:0; url=$url");
+
+    if (!$put) {
+?>
+        <script type="text/javascript">
+            alert("放入失敗！");
+        </script>
+<?       
+    }
 ?>

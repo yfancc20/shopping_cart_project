@@ -2,9 +2,7 @@
     session_start();
 
     function getNewPId() {
-        define("ROOT", $_SERVER['DOCUMENT_ROOT']);
-        
-        include_once ROOT.'/connect_db.php';
+        include_once 'connect_db.php';
         $DB = getDBObject();
 
         $today = date("y").date("m").date("d");

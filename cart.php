@@ -1,14 +1,14 @@
 <?php
     // include db file
-    include_once 'session_login.php';
-    include_once 'connect_db.php';
+    include_once 'f_other/session_login.php';
+    include_once 'f_other/connect_db.php';
     $DB = getDBObject();
 
     // this page need to login
     redirectLogin($login);
 
     // initiate some arrays
-    $idList = array();
+    $sIdList = array();
     $pIdList = array();
     $nameList = array();
     $priceList = array();
@@ -25,7 +25,7 @@
 
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             // push values into each array
-            array_push($idList, $row['id']);
+            array_push($sIdList, $row['s_id']);
             array_push($pIdList, $row['p_id']);
             array_push($nameList, $row['p_name']);
             array_push($numList, $row['p_num']);
@@ -52,10 +52,10 @@
         <title>Shopping cart</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
                 <div class="list-header">
@@ -71,7 +71,7 @@
                     <?
                         // table of shopping list
                         for ($i=0; $i < $count; $i++) {
-                            $id = $idList[$i];
+                            $sId = $sIdList[$i];
                             $pId = $pIdList[$i];
                     ?>
                             <tr>
@@ -83,8 +83,8 @@
                                 <!-- The better way to delete item is using ajax -->
                                 <!-- Do not mention here -->
                                 <td>
-                                    <form method="post" action="cart_delete.php">
-                                        <input type="hidden" name="id" value="<?=$id?>">
+                                    <form method="post" action="f_page/cart_delete.php">
+                                        <input type="hidden" name="s_id" value="<?=$sId?>">
                                         <input type="hidden" name="p_id" value="<?=$pId?>">
                                         <button type="submit" value="submit">X</button>
                                     </form>

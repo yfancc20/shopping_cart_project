@@ -4,7 +4,7 @@
     $p_id = $_GET['id'];
 
     // include_once 多一個 once 避免重複 include 同一張檔案的錯誤
-    include_once 'connect_db.php';
+    include_once 'f_other/connect_db.php';
     $DB = getDBObject();
 
     // 取這個商品的資料
@@ -26,13 +26,13 @@
         <title>Product</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
-                <form method="POST" action="cart_put.php">
+                <form method="POST" action="f_page/cart_put.php">
                     <h1><?=$p_name?></h1>
                     <p><?=$p_id?></p>
                     <input type="hidden" name="p_id" value="<?=$p_id?>">

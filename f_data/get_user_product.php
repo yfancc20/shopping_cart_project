@@ -4,9 +4,8 @@
     // parameter: userId
     // return: pList
     function getUserProduct($userId) {
-        define("ROOT", $_SERVER['DOCUMENT_ROOT']);
 
-        include_once ROOT.'/connect_db.php';
+        include_once __DIR__.'/../f_other/connect_db.php';
         $DB = getDBObject();
         $pList = array();
 

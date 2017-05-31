@@ -1,5 +1,5 @@
 <?php
-    include_once 'session_login.php';
+    include_once 'f_other/session_login.php';
     $userId = $_SESSION['u_id'];
 
     // this page need to login
@@ -13,13 +13,13 @@
         <title>Product Upload</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <h1>上傳新商品</h1>
-            <form method="post" action="product_upload_send.php">
+            <form method="post" action="f_page/product_upload_send.php">
                 <table class="form-table">
                     <tr>
                         <th>商品名稱</th>

@@ -1,6 +1,6 @@
 <?php
-    include_once 'session_login.php';
-    include_once 'connect_db.php';
+    include_once __DIR__.'/../f_other/session_login.php';
+    include_once __DIR__.'/../f_other/connect_db.php';
     $DB = getDBObject();
 
     $userAccount = $_POST['u_account'];
@@ -26,14 +26,26 @@
     if ($result = $DB->query($sql)) {
         $_SESSION['u_id'] = $userId;
         $message = "註冊成功！";
-        $redirect = "<script>document.location.href=\"product_list.php\"</script>";
+        $url = "../product_list.php";
+        $register = true;
     } else {
         $message = "註冊失敗，請重試！";
-        $redirect = "<script>history.go(-1)</script>";
+        $register - false;
     }
 
     $DB->close();
-    echo "<script>alert(\"$message\")</script>";
-    echo $redirect;
 
+    if (!$register) {
 ?>
+        <script type="text/javascript">
+            alert("<?=$message?>");
+            history.go(-1);
+        </script>
+<?
+    } else {
+        header("refresh:0; url=$url");
+    }
+?>
+<script type="text/javascript">
+    alert("<?=$message?>");
+</script>

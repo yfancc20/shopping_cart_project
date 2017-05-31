@@ -10,8 +10,8 @@
     function redirectLogin ($login){
         if ($login == false) {
             $_SESSION['from_url'] = $_SERVER['PHP_SELF'];
-            header('Location: login.php');
+            $url = '../login.php';
+            header("refresh:0; url=$url");
         }
     }
-
 ?>

@@ -1,11 +1,11 @@
 <?php
-    include_once 'session_login.php';
+    include_once __DIR__.'/../f_other/session_login.php';
 
     if ($login == true) {
         echo "<script>history.go(-1)</script>";
     }
 
-    include_once 'connect_db.php';
+    include_once __DIR__.'/../f_other/connect_db.php';
     $DB = getDBObject();
 
     $userAccount = $_POST['u_account'];
@@ -20,7 +20,7 @@
         if (isset($_SESSION['from_url'])) {
             $url = $_SESSION['from_url'];
         } else {
-            $url = "product_list.php";
+            $url = '../product_list.php';
         }
     } else {
         $message = "帳號或密碼錯誤。";

@@ -1,5 +1,5 @@
 <?php
-    include_once 'session_login.php';
+    include_once 'f_other/session_login.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,14 +9,14 @@
         <title>Login</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
             <h1>會員登入</h1>
-                <form method="post" action="login_check.php">
+                <form method="post" action="f_page/login_check.php">
                     <table class="form-table">
                         <tr>
                             <th>帳號</th>

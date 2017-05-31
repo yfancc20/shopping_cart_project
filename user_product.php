@@ -1,5 +1,5 @@
 <?
-    include_once 'session_login.php';
+    include_once 'f_other/session_login.php';
     redirectLogin($login);
 
     include_once 'f_data/get_user_product.php';
@@ -17,10 +17,10 @@
         <title>Product List</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
                 <div class="list-header">
@@ -46,7 +46,7 @@
                                 <td><?=$pList[$i]['p_name']?></td>
                                 <td><?=$pList[$i]['p_price']?></td>
                                 <td>
-                                    <form method="post" action="product_delete.php">
+                                    <form method="post" action="f_page/product_delete.php">
                                         <input type="hidden" name="p_id" value="<?=$pId?>">
                                         <button type="submit" value="submit">X</button>
                                     </form>

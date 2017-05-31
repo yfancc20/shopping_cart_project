@@ -1,6 +1,6 @@
 <?php
-    include_once 'session_login.php';
-    include_once 'connect_db.php';
+    include_once 'f_other/session_login.php';
+    include_once 'f_other/connect_db.php';
 
     $DB = getDBObject();    // 拿到可以操作Database的東西了：$DB
 
@@ -57,10 +57,10 @@
         <title>Product List</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
-        <link href="main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <? include 'menu.php' ?>
+        <? include 'part/menu.php' ?>
         <div class="wrapper">
             <div class="main">
                 <div class="list-header">
