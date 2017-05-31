@@ -54,9 +54,6 @@ a:hover{
 }
 
 
-.list-header > h1{
-    
-}
 .list-img, .list-img > img{
     width: 100px;
     height: 100px;
@@ -79,6 +76,21 @@ a:hover{
     height: 3px;
     background-color: #444444;
     border: 1px solid #444;
+}
+.list-cart, .list-cart td{
+    border-collapse:collapse;
+    border: 1px solid black;
+}
+.list-cart th, .list-cart td{
+    line-height: 50px;
+    padding: 0px 20px;
+}
+.list-cart th{
+    line-height: 20px;
+    text-align: left;
+}
+.list-cart tfoot td{
+    border: 0px;
 }
 
 .form-table{

@@ -2,7 +2,8 @@
     include_once 'session_login.php';
     $userId = $_SESSION['u_id'];
 
-    redirect($login);
+    // this page need to login
+    redirectLogin($login);
 ?>
 <!DOCTYPE html>
 <html>

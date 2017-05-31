@@ -21,36 +21,38 @@
     <body>
         <? include 'menu.php' ?>
         <div class="wrapper">
-            <h1>註冊新會員</h1>
-            <form method="post" action="register_send.php">
-                <table class="form-table">
-                    <tr>
-                        <th><span> * </span>帳號</th>
-                        <td><input type="text" name="u_account" value="<?=$preAccount?>"></td>
-                    </tr>
-                    <tr>
-                        <th><span> * </span>密碼</th>
-                        <td><input type="password" name="u_passwd"></td>
-                    </tr>
-                    <tr>
-                        <th><span> * </span>再次確認密碼</th>
-                        <td><input type="password" name="u_passwdChk"></td>
-                    </tr>
-                    <tr>
-                        <th><span> * </span>姓名</th>
-                        <td><input type="text" name="u_name" value="<?=$preName?>"></td>
-                    </tr>
-                    <tr>
-                        <th><span> * </span>手機</th>
-                        <td><input type="text" name="u_phone" value="<?=$prePhone?>"></td>
-                    </tr>
-                    <tr>
-                        <th><span> * </span>電子信箱</th>
-                        <td><input type="text" name="u_email" value="<?=$preEmail?>"></td>
-                    </tr>
-                </table>
-                <button type="submit">確認送出</button>
-            </form>
+            <div class="main">
+                <h1>註冊新會員</h1>
+                <form method="post" action="register_send.php">
+                    <table class="form-table">
+                        <tr>
+                            <th><span> * </span>帳號</th>
+                            <td><input type="text" name="u_account" value="<?=$preAccount?>"></td>
+                        </tr>
+                        <tr>
+                            <th><span> * </span>密碼</th>
+                            <td><input type="password" name="u_passwd"></td>
+                        </tr>
+                        <tr>
+                            <th><span> * </span>再次確認密碼</th>
+                            <td><input type="password" name="u_passwdChk"></td>
+                        </tr>
+                        <tr>
+                            <th><span> * </span>姓名</th>
+                            <td><input type="text" name="u_name" value="<?=$preName?>"></td>
+                        </tr>
+                        <tr>
+                            <th><span> * </span>手機</th>
+                            <td><input type="text" name="u_phone" value="<?=$prePhone?>"></td>
+                        </tr>
+                        <tr>
+                            <th><span> * </span>電子信箱</th>
+                            <td><input type="text" name="u_email" value="<?=$preEmail?>"></td>
+                        </tr>
+                    </table>
+                    <button type="submit">確認送出</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>

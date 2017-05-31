@@ -1,7 +1,11 @@
 <?php
     // include db file
+    include_once 'session_login.php';
     include_once 'connect_db.php';
     $DB = getDBObject();
+
+    // this page need to login
+    redirectLogin($login);
 
     // initiate some arrays
     $idList = array();
@@ -10,8 +14,11 @@
     $priceList = array();
     $numList = array();
 
+    // varaibles
+    $userId = $_SESSION['u_id'];
+
     // select results from shopping_cart table
-    $sql = "SELECT S.id, P.p_id, P.p_name, P.p_price, S.p_num FROM shopping_cart AS S LEFT JOIN product_list AS P ON S.p_id = P.p_id";
+    $sql = "SELECT S.s_id, P.p_id, P.p_name, P.p_price, S.p_num FROM shopping_cart AS S LEFT JOIN product_list AS P ON S.p_id = P.p_id WHERE S.u_id = $userId";
     if ($result = $DB->query($sql)) {
         // count = number of results
         $count = $result->num_rows;
@@ -50,40 +57,46 @@
     <body>
         <? include 'menu.php' ?>
         <div class="wrapper">
-            <h1>您的購物車</h1>
-            <table class="list-table">
-                <th>商品編號</th>
-                <th>商品名稱</th>
-                <th>商品數量</th>
-                <th>商品價格</th>
-                <?
-                    // table of shopping list
-                    for ($i=0; $i < $count; $i++) {
-                        $id = $idList[$i];
-                        $pId = $pIdList[$i];
-                ?>
-                        <tr>
-                            <td><a href="product.php?id=<?=$pId?>"><?=$pIdList[$i]?></a></td>
-                            <td><?=$nameList[$i]?></td>
-                            <td><?=$numList[$i]?></td>
-                            <td><?=$priceList[$i]*$numList[$i]?></td>
-                            <!-- The better way to delete item is using ajax -->
-                            <!-- Do not mention here -->
-                            <td>
-                                <form method="post" action="cart_delete.php">
-                                    <input type="hidden" name="id" value="<?=$id?>">
-                                    <input type="hidden" name="p_id" value="<?=$pId?>">
-                                    <button type="submit" value="submit">X</button>
-                                </form>
-                            </td>
-                        </tr>
-                <?
-                    }
-                ?>
-                <td colspan="2"></td>
-                <td>總和：</td>
-                <td><?=$totalPrice?></td>
-            </table>
+            <div class="main">
+                <h1>購物車內有 <?=$count?> 件商品</h1>
+                <table class="list-cart">
+                    <th>商品編號</th>
+                    <th>商品名稱</th>
+                    <th>商品數量</th>
+                    <th>商品價格</th>
+                    <th></th>
+                    <?
+                        // table of shopping list
+                        for ($i=0; $i < $count; $i++) {
+                            $id = $idList[$i];
+                            $pId = $pIdList[$i];
+                    ?>
+                            <tr>
+                                <td><a href="product.php?id=<?=$pId?>"><?=$pIdList[$i]?></a></td>
+                                <td width="150px;"><?=$nameList[$i]?></td>
+                                <td><?=$numList[$i]?></td>
+                                <td><?=$priceList[$i]*$numList[$i]?></td>
+                                <!-- The better way to delete item is using ajax -->
+                                <!-- Do not mention here -->
+                                <td>
+                                    <form method="post" action="cart_delete.php">
+                                        <input type="hidden" name="id" value="<?=$id?>">
+                                        <input type="hidden" name="p_id" value="<?=$pId?>">
+                                        <button type="submit" value="submit">X</button>
+                                    </form>
+                                </td>
+                            </tr>
+                    <?
+                        }
+                    ?>
+                    <tfoot>
+                        <td colspan="2"></td>
+                        <td>總和：</td>
+                        <td><?=$totalPrice?></td>
+                        <td></td>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </body>
 </html>
