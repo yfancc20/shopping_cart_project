@@ -1,6 +1,6 @@
 <?
     include_once 'session_login.php';
-    redirect($login);
+    redirectLogin($login);
 
     include_once 'f_data/get_user_product.php';
 
@@ -22,34 +22,41 @@
     <body>
         <? include 'menu.php' ?>
         <div class="wrapper">
-            <button onclick="location.href='product_upload.php'">上傳新商品</button>
-            <h1>您有 <?=$count?> 項商品</h1>
-            <table class="list-table">
-                <tr>
-                    <th>商品編號</th>
-                    <th>商品名稱</th>
-                    <th>商品價格</th>
-                </tr>
-                <?
-                    for ($i=0; $i < $count; $i++) { 
-                        // 把 p_id 取出來 
-                        $pId = $pList[$i]['p_id'];
-                ?>
-                        <tr>
-                            <td><a href="product.php?id=<?=$pId?>"><?=$pList[$i]['p_id']?></a></td>
-                            <td><?=$pList[$i]['p_name']?></td>
-                            <td><?=$pList[$i]['p_price']?></td>
-                            <td>
-                                <form method="post" action="product_delete.php">
-                                    <input type="hidden" name="p_id" value="<?=$pId?>">
-                                    <button type="submit" value="submit">X</button>
-                                </form>
-                            </td>
-                        </tr>
-                <?
-                    }     
-                ?>
-            </table>
+            <div class="main">
+                <div class="list-header">
+                    <h1>您有 <?=$count?> 項商品</h1>
+                </div>
+                <button onclick="location.href='product_upload.php'">上傳新商品</button>
+                <table class="list-cart">
+                    <tr>
+                        <th width="10%">商品編號</th>
+                        <th width="100px">商品圖片</th>
+                        <th>商品名稱</th>
+                        <th width="15%">商品價格</th>
+                        <th width="10%"></th>
+                    </tr>
+                    <?
+                        for ($i=0; $i < $count; $i++) { 
+                            // 把 p_id 取出來 
+                            $pId = $pList[$i]['p_id'];
+                    ?>
+                            <tr>
+                                <td><a href="product.php?id=<?=$pId?>"><?=$pList[$i]['p_id']?></a></td>
+                                <td class="list-img"></td>
+                                <td><?=$pList[$i]['p_name']?></td>
+                                <td><?=$pList[$i]['p_price']?></td>
+                                <td>
+                                    <form method="post" action="product_delete.php">
+                                        <input type="hidden" name="p_id" value="<?=$pId?>">
+                                        <button type="submit" value="submit">X</button>
+                                    </form>
+                                </td>
+                            </tr>
+                    <?
+                        }     
+                    ?>
+                </table>
+            </div>
         </div>
     </body>
 </html>

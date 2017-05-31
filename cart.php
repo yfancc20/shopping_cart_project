@@ -58,9 +58,12 @@
         <? include 'menu.php' ?>
         <div class="wrapper">
             <div class="main">
-                <h1>購物車內有 <?=$count?> 件商品</h1>
+                <div class="list-header">
+                    <h1>購物車內有 <?=$count?> 件商品</h1>
+                </div>
                 <table class="list-cart">
                     <th>商品編號</th>
+                    <th></th>
                     <th>商品名稱</th>
                     <th>商品數量</th>
                     <th>商品價格</th>
@@ -73,6 +76,7 @@
                     ?>
                             <tr>
                                 <td><a href="product.php?id=<?=$pId?>"><?=$pIdList[$i]?></a></td>
+                                <td class="list-img"></td>
                                 <td width="150px;"><?=$nameList[$i]?></td>
                                 <td><?=$numList[$i]?></td>
                                 <td><?=$priceList[$i]*$numList[$i]?></td>
@@ -90,7 +94,7 @@
                         }
                     ?>
                     <tfoot>
-                        <td colspan="2"></td>
+                        <td colspan="3"></td>
                         <td>總和：</td>
                         <td><?=$totalPrice?></td>
                         <td></td>

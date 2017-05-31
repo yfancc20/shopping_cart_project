@@ -81,7 +81,7 @@
                             <tr>
                                 <td class="list-price"><?=$priceList[$i]?></td>
                             </tr>
-                            <tr><td colspan="2"></td></tr>
+                            <tr><td colspan="2" class="list-bottom"></td></tr>
                     <?
                         }
                     ?>
