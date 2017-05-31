@@ -62,6 +62,7 @@
     <body>
         <? include 'part/menu.php' ?>
         <div class="wrapper">
+            <? include 'part/type.php' ?>
             <div class="main">
                 <div class="list-header">
                     <h1>有 <?=$count?> 項商品</h1>
