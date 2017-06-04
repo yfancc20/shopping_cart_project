@@ -27,6 +27,7 @@
             while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                 $tId = $row['t_id'];
                 $countList[$tId] = $row['count'];
+                $countList[0] += $row['count']; // tId=0 => all
             }
         }
         $DB->close();

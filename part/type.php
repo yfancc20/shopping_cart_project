@@ -9,6 +9,7 @@
     </div>
     <div class="type">
         <h3>分類</h3>
+        <li><a href="product_list.php">全部（<?=$countList[0]?>）</a></li>
         <?
             for ($i=0; $i < count($typeList); $i++) {
                 $tId= $typeList[$i]['t_id'];
