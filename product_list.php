@@ -2,6 +2,7 @@
     include_once 'f_other/session_login.php';
     include 'f_data/get_product.php';
 
+    // check if the type is appointed or not
     if (isset($_GET['t'])) {
         $tId = $_GET['t'];
         // get product with certain type
@@ -10,6 +11,7 @@
         // get all products without classifying
         $productList = getProductFromType(0);
     }
+    // number of products
     $count = count($productList);
 
 ?>

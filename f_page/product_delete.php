@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include_once 'connect_db.php';
     $DB = getDBObject();
 

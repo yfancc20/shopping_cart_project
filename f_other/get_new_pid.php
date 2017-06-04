@@ -17,7 +17,7 @@
 
         if ($today == $dateString) {
             $num = intval($numString) + 1;
-            $num = str_pad($num, 3, "0");
+            $num = str_pad($num, 3, "0", STR_PAD_LEFT);
         } else {
             $num = "001";
         }

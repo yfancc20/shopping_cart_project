@@ -19,7 +19,7 @@
         <? include 'part/menu.php' ?>
         <div class="wrapper">
             <h1>上傳新商品</h1>
-            <form method="post" action="f_page/product_upload_send.php">
+            <form method="post" action="f_page/product_upload_send.php" enctype="multipart/form-data">
                 <table class="form-table">
                     <tr>
                         <th>商品名稱</th>
@@ -32,6 +32,10 @@
                     <tr>
                         <th>商品庫存</th>
                         <td><input type="text" name="p_stock"></td>
+                    </tr>
+                    <tr>
+                        <th>商品圖片</th>
+                        <td><input type="file" name="p_photo"></td>
                     </tr>
                 </table>
                 <input type="hidden" name="u_id" value="<?=$userId?>">

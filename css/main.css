@@ -161,6 +161,7 @@ a:hover{
 }
 .form-table td{
     padding: 0px 20px;
+    text-align: left;
 }
 
 .putCart{
