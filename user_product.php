@@ -33,19 +33,31 @@
                         <th width="100px">商品圖片</th>
                         <th>商品名稱</th>
                         <th width="15%">商品價格</th>
-                        <th width="10%"></th>
+                        <th width="10%">商品庫存</th>
+                        <th width="5%"></th>
                     </tr>
                     <?
                         for ($i=0; $i < $count; $i++) { 
                             // 把 p_id 取出來 
                             $pId = $pList[$i]['p_id'];
+                            $pName = $pList[$i]['p_name'];
+                            $pPrice = $pList[$i]['p_price'];
+                            $pStock = $pList[$i]['p_stock'];
                     ?>
                             <tr>
-                                <td><a href="product.php?id=<?=$pId?>"><?=$pList[$i]['p_id']?></a></td>
+                                <td><a href="product.php?id=<?=$pId?>"><?=$pId?></a></td>
                                 <td class="list-img"></td>
-                                <td><?=$pList[$i]['p_name']?></td>
-                                <td><?=$pList[$i]['p_price']?></td>
+                                <td><?=$pName?></td>
+                                <td><?=$pPrice?></td>
+                                <td><?=$pStock?></td>
                                 <td>
+                                    <form method="post" action="product_edit.php">
+                                        <input type="hidden" name="p_id" value="<?=$pId?>">
+                                        <input type="hidden" name="p_name" value="<?=$pName?>">
+                                        <input type="hidden" name="p_price" value="<?=$pPrice?>">
+                                        <input type="hidden" name="p_stock" value="<?=$pStock?>">
+                                        <button type="submit" value="submit">Edit</button>
+                                    </form>
                                     <form method="post" action="f_page/product_delete.php">
                                         <input type="hidden" name="p_id" value="<?=$pId?>">
                                         <button type="submit" value="submit">X</button>

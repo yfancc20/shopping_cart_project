@@ -2,7 +2,7 @@
     <div class="menu-title"></div>
     <div class="menu-general">
         <span><a href="product_list.php"> 商品列表</a></span>
-        <span><a href="product_type.php"> 商品類別</a></span>
+        <!-- <span><a href="product_type.php"> 商品類別</a></span> -->
     </div>
     <div class="menu-user">
         <span><a href="user_product.php"> 我的商品 </a></span>
