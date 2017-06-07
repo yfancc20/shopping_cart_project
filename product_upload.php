@@ -23,19 +23,19 @@
                 <table class="form-table">
                     <tr>
                         <th>商品名稱</th>
-                        <td><input type="text" name="p_name"></td>
+                        <td><input type="text" name="p_name" required="required"></td>
                     </tr>
                     <tr>
                         <th>商品價格</th>
-                        <td><input type="text" name="p_price" placeholder="請輸入單價"></td>
+                        <td><input type="text" name="p_price" required="required" placeholder="請輸入單價"></td>
                     </tr>
                     <tr>
                         <th>商品庫存</th>
-                        <td><input type="text" name="p_stock"></td>
+                        <td><input type="text" name="p_stock" required="required"></td>
                     </tr>
                     <tr>
                         <th>商品圖片</th>
-                        <td><input type="file" name="p_photo"></td>
+                        <td><input type="file" name="p_photo" required="required"></td>
                     </tr>
                 </table>
                 <input type="hidden" name="u_id" value="<?=$userId?>">

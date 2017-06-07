@@ -43,10 +43,12 @@
                             $pName = $pList[$i]['p_name'];
                             $pPrice = $pList[$i]['p_price'];
                             $pStock = $pList[$i]['p_stock'];
+                            $pPhoto = $pList[$i]['p_photo'];
+                            $pPhotoStr = "u_photo/" . $pPhoto;
                     ?>
                             <tr>
                                 <td><a href="product.php?id=<?=$pId?>"><?=$pId?></a></td>
-                                <td class="list-img"></td>
+                                <td class="list-img"><img src="<?=$pPhotoStr?>"></td>
                                 <td><?=$pName?></td>
                                 <td><?=$pPrice?></td>
                                 <td><?=$pStock?></td>
@@ -56,6 +58,7 @@
                                         <input type="hidden" name="p_name" value="<?=$pName?>">
                                         <input type="hidden" name="p_price" value="<?=$pPrice?>">
                                         <input type="hidden" name="p_stock" value="<?=$pStock?>">
+                                        <input type="hidden" name="p_photo" value="<?=$pPhoto?>">
                                         <button type="submit" value="submit">Edit</button>
                                     </form>
                                     <form method="post" action="f_page/product_delete.php">

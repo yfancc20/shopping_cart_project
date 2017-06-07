@@ -88,14 +88,6 @@ a:hover{
     color: #fff;
 }
 
-
-.list-img, .list-img > img{
-    width: 100px;
-    height: 100px;
-}
-.list-img > img{
-    background-color: #444444;
-}
 .list-name, .list-price{
     height: 50px; 
     width: 100%;
@@ -127,6 +119,14 @@ a:hover{
 }
 .list-cart .list-img{
     border-right-style: none;
+}
+td.list-img{
+    padding: 10px 10px;
+}
+.list-img > img{
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
 }
 .list-table{
     border: 1px solid #227700;

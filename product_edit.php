@@ -10,6 +10,8 @@
     $pName = $_POST['p_name'];
     $pPrice = $_POST['p_price'];
     $pStock = $_POST['p_stock'];
+    $pPhoto = $_POST['p_photo'];
+    $pPhotoStr = "u_photo/" . $pPhoto;
 
 ?>
 <!DOCTYPE html>
@@ -41,10 +43,18 @@
                             <th>商品庫存</th>
                             <td><input type="text" name="p_stock" value="<?=$pStock?>"></td>
                         </tr>
+                        <tr>
+                            <th>商品圖片</th>
+                            <td class="list-img"><img src="<?=$pPhotoStr?>"></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type="file" name="p_photo" required="required"></td>
+                        </tr>
                     </table>
                     <input type="hidden" name="p_id" value="<?=$pId?>">
                     <input type="hidden" name="u_id" value="<?=$userId?>">
-                    <button type="submit">上傳</button>
+                    <button type="submit">送出</button>
                 </form>
             </div>
         </div>
