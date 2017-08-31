@@ -1,4 +1,4 @@
-<p>This is a simple shopping website system.</p>
+<p>This is a simple shopping website system. This project can help you realizing the 'basic' part of php webiste which includes the server-side end part. This is for fresher and no recommended to those who had exeperience on webiste development.</p>
 
 <h3>Why?</h3>
 <p>I build this for demonstracting the use of basic PHP, HTML and MySQL to my friend.</p>
